@@ -26,7 +26,7 @@ export default function Labs() {
           transition={{ duration: 0.75, ease: "easeOut" }}
         >
           <Image
-            src="/labs.jpg"
+            src="/labs.jpeg"
             alt="People talking"
             fill
             className="object-cover"
@@ -56,7 +56,7 @@ export default function Labs() {
             into one place so the focus stays on people and culture.
           </p>
 
-          <motion.div {...reveal} transition={{ duration: 0.55, delay: 0.18 }}>
+          <motion.div {...reveal} transition={{ duration: 0.55, delay: 0.18 }} className="mt-6 w-fit">
             <Link
             href="/mission"
             className="mt-6 w-fit px-6 py-3 bg-black text-white rounded-full hover:opacity-90 transition"

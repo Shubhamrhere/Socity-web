@@ -56,12 +56,12 @@ export default function Approach() {
           
           {/* Arrow (optional image) */}
           <motion.div className="mb-6" whileInView={{ rotate: [0, -8, 0], opacity: [0, 1, 1] }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.7 }}>
-            <Image
-              src="/arrow.png" // optional, or remove
+            {/* <Image
+              src="/arrow.jpeg" // optional, or remove
               alt="arrow"
               width={60}
               height={60}
-            />
+            /> */}
           </motion.div>
 
           <p className="text-gray-600 text-base md:text-lg leading-relaxed max-w-md">
@@ -70,7 +70,7 @@ export default function Approach() {
             shared interests, goals, commitment level, and real activity.
           </p>
 
-          <motion.div {...fadeUp} transition={{ duration: 0.55, delay: 0.16 }}>
+          <motion.div {...fadeUp} transition={{ duration: 0.55, delay: 0.16 }} className="mt-6 w-fit">
             <Link
             href="/resources"
             className="mt-6 w-fit px-6 py-3 bg-black text-white rounded-full hover:opacity-90 transition"

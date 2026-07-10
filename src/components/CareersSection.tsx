@@ -53,7 +53,7 @@ export default function CareersSection() {
           {/* Image 1 */}
           <motion.div className="flex-1 max-w-50 rounded-xl overflow-hidden" whileInView={{ y: [20, 0] }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.05 }}>
             <img
-              src="/img1.jpg"
+              src="/cta1.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />
@@ -62,7 +62,7 @@ export default function CareersSection() {
           {/* Image 2 (lower) */}
           <motion.div className="flex-1 max-w-50 rounded-xl overflow-hidden translate-y-6" whileInView={{ y: [30, 24] }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.12 }}>
             <img
-              src="/img2.jpg"
+              src="/cta2.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />
@@ -71,7 +71,7 @@ export default function CareersSection() {
           {/* Image 3 (upper) */}
           <motion.div className="flex-1 max-w-50 rounded-xl overflow-hidden -translate-y-4" whileInView={{ y: [8, -16] }} viewport={{ once: true }} transition={{ duration: 0.6, delay: 0.18 }}>
             <img
-              src="/img3.jpg"
+              src="/cta3.jpeg"
               alt=""
               className="w-full h-full object-cover"
             />

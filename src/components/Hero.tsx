@@ -15,7 +15,7 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="/hero.jpg" // put your image in public folder
+          src="/Hero.jpeg" // put your image in public folder
           alt="People in a community"
           fill
           priority

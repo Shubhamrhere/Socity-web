@@ -7,7 +7,34 @@ import { motion } from "framer-motion"
 
 type NavbarTheme = "transparent" | "light" | "dark"
 
-export default function Navbar() {
+type NavLink = {
+  label: string
+  href: string
+}
+
+type NavbarProps = {
+  logo?: string
+  leftLinks?: NavLink[]
+  rightLinks?: NavLink[]
+}
+
+const DEFAULT_LEFT_LINKS: NavLink[] = [
+  { label: "Mission", href: "/mission" },
+  { label: "Impact", href: "/impact" },
+  { label: "Labs", href: "/labs" },
+]
+
+const DEFAULT_RIGHT_LINKS: NavLink[] = [
+  { label: "Newsroom", href: "/newsroom" },
+  { label: "Founder", href: "/founder-statement" },
+  { label: "Resources", href: "/resources" },
+]
+
+export default function Navbar({
+  logo = "SOCITY",
+  leftLinks = DEFAULT_LEFT_LINKS,
+  rightLinks = DEFAULT_RIGHT_LINKS,
+}: NavbarProps) {
   const pathname = usePathname()
   const [theme, setTheme] = useState<NavbarTheme>(pathname === "/" ? "transparent" : "dark")
 
@@ -44,19 +71,23 @@ export default function Navbar() {
       className={`fixed top-0 left-0 w-full z-30 flex items-center justify-between px-6 md:px-12 py-6 transition-colors duration-300 ${navClassByTheme[theme]}`}
     >
       <motion.div className="hidden md:flex gap-8 text-sm font-medium" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.1 }}>
-        <Link href="/mission" className="cursor-pointer hover:opacity-80">Mission</Link>
-        <Link href="/impact" className="cursor-pointer hover:opacity-80">Impact</Link>
-        <Link href="/labs" className="cursor-pointer hover:opacity-80">Labs</Link>
+        {leftLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="cursor-pointer hover:opacity-80">
+            {link.label}
+          </Link>
+        ))}
       </motion.div>
 
       <motion.div className="text-xl md:text-2xl font-semibold" initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: 0.15 }}>
-        <Link href="/">SOCITY</Link>
+        <Link href="/">{logo}</Link>
       </motion.div>
 
       <motion.div className="hidden md:flex gap-8 text-sm font-medium" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-        <Link href="/newsroom" className="cursor-pointer hover:opacity-80">Newsroom</Link>
-        <Link href="/founder-statement" className="cursor-pointer hover:opacity-80">Founder</Link>
-        <Link href="/resources" className="cursor-pointer hover:opacity-80">Resources</Link>
+        {rightLinks.map((link) => (
+          <Link key={link.href} href={link.href} className="cursor-pointer hover:opacity-80">
+            {link.label}
+          </Link>
+        ))}
       </motion.div>
     </motion.nav>
   )

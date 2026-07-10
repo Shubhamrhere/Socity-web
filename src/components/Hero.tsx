@@ -3,7 +3,17 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 
-export default function Hero() {
+type HeroProps = {
+  imageSrc?: string;
+  imageAlt?: string;
+  headline?: React.ReactNode;
+}
+
+export default function Hero({ 
+  imageSrc = "/Hero.jpeg", 
+  imageAlt = "People in a community", 
+  headline = <>What Socity Is? <br />Belonging, built with intention.</>
+}: HeroProps) {
   return (
     <section data-nav-theme="transparent" className="relative w-full h-screen min-h-150">
       
@@ -15,8 +25,8 @@ export default function Hero() {
         transition={{ duration: 1.2, ease: "easeOut" }}
       >
         <Image
-          src="/Hero.jpeg" // put your image in public folder
-          alt="People in a community"
+          src={imageSrc}
+          alt={imageAlt}
           fill
           priority
           className="object-cover"
@@ -36,8 +46,7 @@ export default function Hero() {
           className="text-white font-serif font-bold leading-tight 
           text-3xl sm:text-4xl md:text-5xl lg:text-6xl max-w-xl">
           
-          What Socity Is? <br />
-          Belonging, built with intention.
+          {headline}
         </motion.h1>
 
       </div>

@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { Twitter, Instagram, Globe } from "lucide-react"
+import { Twitter, Instagram, Globe, Linkedin, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Footer() {
@@ -52,10 +52,19 @@ export default function Footer() {
                 <Link href="/founder-statement" className="hover:text-gray-300">Founder Statement</Link>
                 <Link href="/resources" className="hover:text-gray-300">Resources</Link>
 
-                <div className="flex items-center gap-4">
-                  <a href="mailto:support@socity.app" className="hover:text-gray-300">Contact</a>
-                  <Twitter size={18} />
-                  <Instagram size={18} />
+                <div className="flex flex-col gap-3 pt-2">
+                  <a href="mailto:support@socity.site" className="flex items-center gap-2 hover:text-gray-300 text-sm">
+                    <Mail size={16} />
+                    <span>support@socity.site</span>
+                  </a>
+                  <div className="flex items-center gap-4 text-gray-400">
+                    <a href="https://www.instagram.com/socity.india?igsh=eHZ5cnRxNnM0YzY1" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                      <Instagram size={18} />
+                    </a>
+                    <a href="https://www.linkedin.com/company/socity-india/" target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                      <Linkedin size={18} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
